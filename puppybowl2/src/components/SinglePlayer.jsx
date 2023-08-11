@@ -19,13 +19,13 @@ console.log(error);
         }
     }
 
-    useEffect((player) => {
+    useEffect(() => {
         async function fetchSinglePlayer() {
             try {
                 const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-PT-WEB-PT-C/players/${id}/`);
                 const result = await response.json();
                 setPlayer(result.data.player);
-                console.log(player);
+                console.log(result.data.player);
             } catch (error) {
                 console.log(error);
             }
@@ -38,7 +38,7 @@ console.log(error);
             <div>
                 <h1>{player.name}</h1>
                 <img 
-                src={player.imageUrl} 
+                src={player.imageUrl} style={{maxWidth: "100%", maxHeight: "400px"}}
                 alt={player.name} 
                 />
 

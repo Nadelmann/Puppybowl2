@@ -9,7 +9,7 @@ export default function PlayerCard({ player, setSelectedPlayerId }) {
                     setSelectedPlayerId(player.id);
                 }}
             >
-                <img src={player.imageUrl} alt={player.name} />
+                <img src={player.imageUrl} style={{maxWidth: "100%", maxHeight: "300px"}} alt={player.name} />
                 <h1>{player.name}</h1>
                 <p>Breed: {player.breed}</p>
                 <p>Status: {player.status}</p>

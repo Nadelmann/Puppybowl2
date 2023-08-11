@@ -29,8 +29,8 @@ export default function AllPlayers({ setSelectedPlayerId }) {
             try {
                 const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-PT-WEB-PT-C/players');
                 const data = await response.json();
-                console.log(data);
-                setPlayers(data.results);
+                console.log(data.data.players);
+                setPlayers(data.data.players);
                 console.log(data.results);
             } catch (error) {
                 console.error(error);
@@ -59,7 +59,7 @@ export default function AllPlayers({ setSelectedPlayerId }) {
                             player={player}
                             setSelectedPlayerId={setSelectedPlayerId}
                         />
-                        <button className="detailsButton" onClick={() => navigate(`/players/${player.id}`)}>Details</button>
+                        <button className="detailsButton" onClick={() => navigate(`/allplayers/${player.id}`)}>Details</button>
                         <button className="removeButton" onClick={() => handleClick(player.id)}>Remove Player</button>
                     </div>
                 ))}
